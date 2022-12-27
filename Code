@@ -1,0 +1,17 @@
+from itertools import combinations
+
+Table={
+    "TOI":[3,3,3,3,3,5,6],
+    "Hindu":[2.5,2.5,2.5,2.5,2.5,4,4],
+    "ET":[4,4,4,4,4,4,10],
+    "BM":[1.5,1.5,1.5,1.5,1.5,1.5,1.5],
+    "HT":[2,2,2,2,2,4,4]
+}
+
+budget=int(input())
+comb = combinations(Table, 2) 
+res=[]
+for i in list(comb):
+    if sum(Table[i[0]])+sum(Table[i[1]])<=budget:
+        res.append(i)
+print(res)
